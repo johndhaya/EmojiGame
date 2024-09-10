@@ -1,0 +1,34 @@
+// Write your code here.
+import './index.css'
+
+const LOSE_IMAGE = 'https://assets.ccbp.in/frontend/react-js/lose-game-img.png'
+const WIN_IMAGE = 'https://assets.ccbp.in/frontend/react-js/win-game-img.png'
+
+const WinOrLoseCard = props => {
+  const {isWon, onClickPlayAgain, score} = props
+  const imgUrl = isWon ? WIN_IMAGE : LOSE_IMAGE
+  const gamestatus = isWon ? 'You Won' : 'You Lose'
+  const scoreLabel = isWon ? 'Best Score' : 'Score'
+
+  return (
+    <div className="win-lose-card">
+      <div className="details-section">
+        <h1 className="game-status">{gamestatus}</h1>
+        <p className="current-score-label">{scoreLabel}</p>
+        <p className="current-score-value">{score}/12</p>
+        <button
+          className="play-again-btn"
+          type="button"
+          onClick={onClickPlayAgain}
+        >
+          Play Again
+        </button>
+      </div>
+      <div className="image-section">
+        <img className="win-lose-image" src={imgUrl} alt="win or lose" />
+      </div>
+    </div>
+  )
+}
+
+export default WinOrLoseCard
