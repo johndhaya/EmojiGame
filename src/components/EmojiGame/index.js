@@ -27,7 +27,6 @@ class EmojiGame extends Component {
 
   resetGame = () => {
     this.setState({clickedEmojisList: [], isGameInProgress: true})
-    this.forceUpdate()
   }
 
   renderScoreCard = () => {
