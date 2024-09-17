@@ -46,7 +46,7 @@ class EmojiGame extends Component {
   }
 
   finishGameAndSetTopScore = currScore => {
-    const topScore = this.state
+    const {topScore} = this.state
     let newTopScore = topScore
 
     if (currScore > topScore) {
@@ -67,7 +67,7 @@ class EmojiGame extends Component {
       this.finishGameAndSetTopScore(clickedEmojisLength)
     } else {
       if (emojisList.length - 1 === clickedEmojisLength) {
-        this.finishGameAndSetTopScore(emojisList.ength)
+        this.finishGameAndSetTopScore(emojisList.length)
       }
       this.setState(prevState => ({
         clickedEmojisList: [...prevState.clickedEmojisList, id],
